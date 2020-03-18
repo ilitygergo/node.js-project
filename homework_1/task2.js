@@ -2,9 +2,9 @@ import csvtojson from 'csvtojson';
 import fs from 'fs';
 
 csvtojson()
-	.fromFile('./homework_1/files/grades.csv')
+	.fromFile('./files/grades.csv')
 	.then((json)=>{
-		fs.writeFile("./homework_1/files/grades.txt", jsonArrayToPreparedString(json), function(err) {
+		fs.writeFile("./files/grades.txt", jsonArrayToPreparedString(json), function(err) {
 			if(err) {
 				return console.log(err);
 			}
