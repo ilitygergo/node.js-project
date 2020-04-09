@@ -1,9 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
 
-export default interface BookModel {
+export default class BookModel {
     id: uuidv4;
-    login: String;
-    password: String;
-    age: Number;
-    isDeleted: Boolean;
+
+    login: string;
+
+    password: string;
+
+    age: number;
+
+    isDeleted: boolean;
 }

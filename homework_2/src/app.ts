@@ -1,6 +1,6 @@
-import express from "express";
-import bodyParser from "body-parser";
-import userRouter from "./routes/userRoutes";
+import express from 'express';
+import bodyParser from 'body-parser';
+import userRouter from './routes/userRoutes';
 
 const app = express();
 const port = 8080;
@@ -8,7 +8,7 @@ const port = 8080;
 app.use(bodyParser.json());
 app.use('/users', userRouter);
 
-app.listen(port, err => {
+app.listen(port, (err) => {
   if (err) {
     return console.error(err);
   }
