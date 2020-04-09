@@ -2,10 +2,12 @@
   "parser": "@typescript-eslint/parser",
   "extends": [
     "airbnb",
+    "prettier",
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "plugins": ["prettier"],
   "settings": {
     "import/resolver": {
       "typescript": {}
@@ -22,6 +24,7 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "prettier/prettier": ["error"]
   },
 }

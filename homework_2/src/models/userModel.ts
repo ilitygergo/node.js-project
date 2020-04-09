@@ -1,13 +1,13 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 export default class BookModel {
-    id: uuidv4;
+    id: uuidv4
 
-    login: string;
+    login: string
 
-    password: string;
+    password: string
 
-    age: number;
+    age: number
 
-    isDeleted: boolean;
+    isDeleted: boolean
 }
