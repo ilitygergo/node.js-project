@@ -37,7 +37,9 @@ const update = async (userId: uuidv4, data: any) => {
     let user = users.find(user => user.id === userId);
 
     Object.keys(data).forEach((key) => {
-        user[key] = data[key];
+        if (key in user) {
+          user[key] = data[key];
+        }
     });
 
     return user;
