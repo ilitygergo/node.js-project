@@ -1,11 +1,12 @@
-import express from 'express';
+import express from "express";
+import bodyParser from "body-parser";
+import userRouter from "./routes/userRoutes";
 
 const app = express();
 const port = 8080;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(bodyParser.json());
+app.use('/users', userRouter);
 
 app.listen(port, err => {
   if (err) {
