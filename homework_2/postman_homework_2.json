@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"login\": \"user1\",\n\t\"password\": \"Password123\",\n\t\"age\": 20\n}\n",
+							"raw": "{\n\t\"login\": \"user1\",\n\t\"password\": \"Password1\",\n\t\"age\": 20,\n\t\"isDeleted\": false\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -68,7 +68,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/bf6197be-dc74-4ffb-a8fc-ebfe508f40bd",
+							"raw": "http://localhost:8080/users/aac84f3b-73be-43b7-8875-230da56812a5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -76,7 +76,7 @@
 							"port": "8080",
 							"path": [
 								"users",
-								"bf6197be-dc74-4ffb-a8fc-ebfe508f40bd"
+								"aac84f3b-73be-43b7-8875-230da56812a5"
 							]
 						}
 					},
@@ -89,7 +89,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"login\": \"updatedUser1\",\n\t\"age\": 22\n}\n",
+							"raw": "{\n\t\"login\": \"updatedUser1\",\n\t\"password\": \"Password123\",\n\t\"age\": 22,\n\t\"isDeleted\": false\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -97,7 +97,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/users/df57f3bd-dfd5-49a2-9f68-85ce8c282f6c",
+							"raw": "http://localhost:8080/users/aac84f3b-73be-43b7-8875-230da56812a5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -105,7 +105,7 @@
 							"port": "8080",
 							"path": [
 								"users",
-								"df57f3bd-dfd5-49a2-9f68-85ce8c282f6c"
+								"aac84f3b-73be-43b7-8875-230da56812a5"
 							]
 						}
 					},
@@ -117,7 +117,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/bf6197be-dc74-4ffb-a8fc-ebfe508f40bd",
+							"raw": "http://localhost:8080/users/aac84f3b-73be-43b7-8875-230da56812a5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -125,7 +125,7 @@
 							"port": "8080",
 							"path": [
 								"users",
-								"bf6197be-dc74-4ffb-a8fc-ebfe508f40bd"
+								"aac84f3b-73be-43b7-8875-230da56812a5"
 							]
 						}
 					},
