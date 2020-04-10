@@ -12,7 +12,7 @@ const getAutoSuggestUsers = async (loginSubstring: string, limit: number) => {
         }
     })
 
-    return limitedUsers
+    return limitedUsers.sort((a, b) => (a.login > b.login ? 1 : -1))
 }
 
 const create = async (data: userModel) => {

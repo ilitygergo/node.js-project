@@ -42,7 +42,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/?limit=3",
+							"raw": "http://localhost:8080/users/?limit=10&loginSubstring=",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -55,7 +55,11 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": "3"
+									"value": "10"
+								},
+								{
+									"key": "loginSubstring",
+									"value": ""
 								}
 							]
 						}
