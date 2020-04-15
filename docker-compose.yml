@@ -13,6 +13,7 @@ services:
         - "5000:5000"
       depends_on:
         - database
+
     database:
       image: postgres
       container_name: mentoring_postgres
@@ -24,3 +25,18 @@ services:
         - ./homework_2/src/config/init.sql:/docker-entrypoint-initdb.d/init.sql
       ports:
         - "5432:5432"
+      restart: unless-stopped
+
+    pgadmin:
+        image: dpage/pgadmin4
+        container_name: mentoring_pgadmin
+        links:
+            - database
+        depends_on:
+            - database
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@example.com
+            PGADMIN_DEFAULT_PASSWORD: admin
+        ports:
+            - "5050:80"
+        restart: unless-stopped
