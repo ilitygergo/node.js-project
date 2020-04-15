@@ -3,7 +3,7 @@ import bodyParser from 'body-parser'
 import userRouter from './routes/userRoutes'
 
 const app = express()
-const port = 8080
+const port = 5000
 
 app.use(bodyParser.json())
 app.use('/users', userRouter)
