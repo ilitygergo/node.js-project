@@ -5,7 +5,7 @@ CREATE TABLE users (
     login     VARCHAR(255) NOT NULL, 
     password  VARCHAR(255) NOT NULL, 
     age       INT, 
-    isdeleted BOOLEAN,
+    isDeleted BOOLEAN,
     PRIMARY KEY (id) 
 );
 

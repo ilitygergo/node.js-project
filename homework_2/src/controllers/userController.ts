@@ -6,13 +6,10 @@ const getAll = async (req: Request, res: Response, next: NextFunction) => {
         ? req.query.loginSubstring.toString()
         : ''
     const limit = req.query.limit ? parseInt(req.query.limit as string, 10) : 10
-    const suggestions = await userService.getAutoSuggestUsers(
-        loginSubstring,
-        limit
-    )
+    const users = await userService.getAutoSuggestUsers(loginSubstring, limit)
 
-    if (suggestions.length > 0) {
-        return res.json(suggestions)
+    if (users.length > 0) {
+        return res.json(users)
     }
     return res.status(204).json({})
 }
