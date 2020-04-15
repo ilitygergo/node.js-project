@@ -20,5 +20,7 @@ services:
         POSTGRES_USER: admin
         POSTGRES_PASSWORD: admin
         POSTGRES_DB: mentoring
+      volumes:
+        - ./homework_2/src/config/init.sql:/docker-entrypoint-initdb.d/init.sql
       ports:
         - "5432:5432"
