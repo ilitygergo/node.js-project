@@ -1,13 +1,45 @@
-import { v4 as uuidv4 } from 'uuid'
+import uuid from 'uuid'
+import { DataTypes, Model } from 'sequelize'
+import database from './database'
 
-export default class BookModel {
-    id: uuidv4
+const { sequelize } = database
 
-    login: string
+export default class User extends Model {
+    public readonly id: uuid
 
-    password: string
+    public login: string
 
-    age: number
+    public password: string
 
-    isDeleted: boolean
+    public age: number
+
+    public isDeleted: boolean
 }
+
+User.init(
+    {
+        id: {
+            type: DataTypes.UUID,
+            primaryKey: true,
+        },
+        login: {
+            type: DataTypes.STRING(255),
+            allowNull: false,
+        },
+        password: {
+            type: DataTypes.STRING(255),
+            allowNull: false,
+        },
+        age: {
+            type: DataTypes.INTEGER,
+        },
+        isdeleted: {
+            type: DataTypes.BOOLEAN,
+        },
+    },
+    {
+        tableName: 'users',
+        timestamps: false,
+        sequelize,
+    }
+)
