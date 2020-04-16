@@ -12,7 +12,7 @@ const passwordComplexityOptions = {
 
 export default Joi.object({
     login: Joi.string().required(),
-    password: PasswordComplexity(passwordComplexityOptions),
+    password: PasswordComplexity(passwordComplexityOptions).required(),
     age: Joi.number().integer().min(4).max(130).required(),
     isDeleted: Joi.boolean().required(),
 })
