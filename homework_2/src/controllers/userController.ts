@@ -38,12 +38,17 @@ const getById = async (req: Request, res: Response, next: NextFunction) => {
 
 const update = async (req: Request, res: Response, next: NextFunction) => {
     if (req.body && req.params.id) {
-        const user = await userService.update(req.params.id, req.body)
-
-        if (user) {
-            return res.json(user)
-        }
-        return res.status(204).json({})
+        return userService
+            .update(req.params.id, req.body)
+            .then((user) => {
+                if (user) {
+                    return res.json(user)
+                }
+                return res.status(204).json({})
+            })
+            .catch(() => {
+                return res.status(400).json({})
+            })
     }
     return res.status(400).json({})
 }

@@ -35,13 +35,9 @@ const getById = async (userId: uuidv4): Promise<User> => {
 }
 
 const update = async (userId: uuidv4, data: User): Promise<User> => {
-    return User.findOne({
-        where: {
-            id: userId,
-        },
-    }).then((user) => {
-        user.update(data)
-    })
+    const user = await getById(userId)
+
+    return user.update(data)
 }
 
 const setIsDeletedFlag = async (userId: uuidv4): Promise<User> => {
