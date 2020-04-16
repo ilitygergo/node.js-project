@@ -19,18 +19,13 @@ const getAutoSuggestUsers = async (
     })
 }
 
-const create = async (data: User) => {
-    const user = {
-        id: uuidv4(),
+const create = async (data: User): Promise<User> => {
+    return User.create({
         login: data.login,
         password: data.password,
         age: data.age,
-        isDeleted: false,
-    }
-
-    users.push(user)
-
-    return user
+        isDeleted: data.isDeleted,
+    })
 }
 
 const getById = async (userId: uuidv4): Promise<User> => {
