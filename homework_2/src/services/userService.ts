@@ -41,14 +41,10 @@ const update = async (userId: uuidv4, data: User): Promise<User> => {
 }
 
 const setIsDeletedFlag = async (userId: uuidv4): Promise<User> => {
-    return User.findOne({
-        where: {
-            id: userId,
-        },
-    }).then((user) => {
-        user.update({
-            isDeleted: true,
-        })
+    const user = await getById(userId)
+
+    return user.update({
+        isDeleted: true,
     })
 }
 
