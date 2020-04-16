@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
+import validator from 'validator'
 import userService from '../services/userService'
 
 const getAll = async (req: Request, res: Response, next: NextFunction) => {
@@ -23,7 +24,7 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
 }
 
 const getById = async (req: Request, res: Response, next: NextFunction) => {
-    if (req.params.id) {
+    if (req.params.id && validator.isUUID(req.params.id)) {
         const user = await userService.getById(req.params.id)
 
         if (user) {
