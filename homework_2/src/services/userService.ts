@@ -2,8 +2,6 @@ import { Op } from 'sequelize'
 import { v4 as uuidv4 } from 'uuid'
 import User from '../models/userModel'
 
-const users = []
-
 const getAutoSuggestUsers = async (
     loginSubstring: string,
     limit: number
@@ -36,31 +34,26 @@ const getById = async (userId: uuidv4): Promise<User> => {
     })
 }
 
-const update = async (userId: uuidv4, data: any) => {
-    const userToUpdate = users.find((user) => user.id === userId)
-
-    Object.keys(data).forEach((key) => {
-        if (key in userToUpdate) {
-            userToUpdate[key] = data[key]
-        }
+const update = async (userId: uuidv4, data: User): Promise<User> => {
+    return User.findOne({
+        where: {
+            id: userId,
+        },
+    }).then((user) => {
+        user.update(data)
     })
-
-    return userToUpdate
 }
 
-const setIsDeletedFlag = async (userId: uuidv4) => {
-    const userToDelete = users.find((user) => user.id === userId)
-
-    if (userToDelete) {
-        Object.keys(userToDelete).forEach((key) => {
-            if (key === 'isDeleted') {
-                userToDelete[key] = true
-            }
+const setIsDeletedFlag = async (userId: uuidv4): Promise<User> => {
+    return User.findOne({
+        where: {
+            id: userId,
+        },
+    }).then((user) => {
+        user.update({
+            isDeleted: true,
         })
-
-        return true
-    }
-    return false
+    })
 }
 
 export default {
