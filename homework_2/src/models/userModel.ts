@@ -18,10 +18,6 @@ export default class User extends Model {
 
 User.init(
     {
-        id: {
-            type: DataTypes.UUID,
-            primaryKey: true,
-        },
         login: {
             type: DataTypes.STRING(255),
             allowNull: false,
@@ -33,7 +29,7 @@ User.init(
         age: {
             type: DataTypes.INTEGER,
         },
-        isdeleted: {
+        isDeleted: {
             type: DataTypes.BOOLEAN,
         },
     },
