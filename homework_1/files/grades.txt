@@ -13,4 +13,4 @@
 {"Last name":"Elephant","First name":"Ima","SSN":"456-71-9012","Test1":"45.0","Test2":"1.0","Test3":"78.0","Test4":"88.0","Final":"77.0","Grade":"B-"}
 {"Last name":"Franklin","First name":"Benny","SSN":"234-56-2890","Test1":"50.0","Test2":"1.0","Test3":"90.0","Test4":"80.0","Final":"90.0","Grade":"B-"}
 {"Last name":"George","First name":"Boy","SSN":"345-67-3901","Test1":"40.0","Test2":"1.0","Test3":"11.0","Test4":"-1.0","Final":"4.0","Grade":"B"}
-{"Last name":"Heffalump","First name":"Harvey","SSN":"632-79-9439","Test1":"30.0","Test2":"1.0","Test3":"20.0","Test4":"30.0","Final":"40.0","Grade":"\"C\"csv"}
+{"Last name":"Heffalump","First name":"Harvey","SSN":"632-79-9439","Test1":"30.0","Test2":"1.0","Test3":"20.0","Test4":"30.0","Final":"40.0","Grade":"C"}
