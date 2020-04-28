@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+    node:
+      build:
+        context: ./homework_2
+        dockerfile: Dockerfile
+      container_name: mentoring_node
+      volumes:
+       - ./homework_2:/usr/src/app
+       - /usr/src/app/node_modules
+      ports:
+        - "5000:5000"
+      depends_on:
+        - database
+
+    database:
+      image: postgres
+      container_name: mentoring_postgres
+      environment:
+        POSTGRES_USER: admin
+        POSTGRES_PASSWORD: admin
+        POSTGRES_DB: mentoring
+      volumes:
+        - ./homework_2/src/config/init.sql:/docker-entrypoint-initdb.d/init.sql
+      ports:
+        - "5432:5432"
+      restart: unless-stopped
+
+    pgadmin:
+        image: dpage/pgadmin4
+        container_name: mentoring_pgadmin
+        links:
+            - database
+        depends_on:
+            - database
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@example.com
+            PGADMIN_DEFAULT_PASSWORD: admin
+        ports:
+            - "5050:80"
+        restart: unless-stopped
+        logging:
+            driver: none
