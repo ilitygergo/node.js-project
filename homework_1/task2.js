@@ -1,5 +1,5 @@
-const csvtojson  = require('csvtojson');
-const fs = require('fs');
+import csvtojson from 'csvtojson';
+import fs from 'fs';
 
 csvtojson()
 	.fromFile('./homework_1/files/grades.csv')
