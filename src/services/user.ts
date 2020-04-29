@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import validator from 'validator'
-import userService from '../services/userService'
+import userService from '../data-access/user'
 
 const getAll = async (req: Request, res: Response, next: NextFunction) => {
     const loginSubstring = req.query.loginSubstring
@@ -24,7 +24,7 @@ const getAll = async (req: Request, res: Response, next: NextFunction) => {
 
 const create = async (req: Request, res: Response, next: NextFunction) => {
     if (req.body) {
-        userService
+        return userService
             .create(req.body)
             .then((user) => {
                 return res.status(201).json(user)
