@@ -24,11 +24,11 @@ PgAdmin setup:
 
 **NPM**
 
-You can also run the npm scripts from the `/homework_1` and the `/homework_2` folders
+You can also run the npm scripts from the root directory
 
 Use `npm start` to start the server. Run `npm run prod` to execute the code inside the `/dist` folder.
 
 You can check for lint errors by using `npm run lint` or fix them with `npm run lint-fix`.
 
 ## APIs
-I exported a Postman API Collection in `/homework_2/postman.json`
+I exported a Postman API Collection in `/postman.json`
