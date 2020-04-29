@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 
 const sequelize = new Sequelize(
-    'postgres://admin:admin@database:5432/mentoring'
+    'postgres://admin:admin@database:5432/test'
 )
 
 const connect = (): void => {
