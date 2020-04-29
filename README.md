@@ -1,5 +1,5 @@
-#  Node.js-Mentoring
-This is my Node.js mentoring repository, where I can finish my module homeworks.
+#  Node.js CRUD API
+Simple Node.js API for CRUD functions
 
 ## Get started
 Use *npm* and install the required dependencies with the `npm i` command inside each homework folder.
