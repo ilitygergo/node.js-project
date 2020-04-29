@@ -1,8 +1,6 @@
 import { Sequelize } from 'sequelize'
 
-const sequelize = new Sequelize(
-    'postgres://admin:admin@database:5432/test'
-)
+const sequelize = new Sequelize('postgres://admin:admin@database:5432/test')
 
 const connect = (): void => {
     sequelize
